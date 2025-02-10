@@ -1,7 +1,12 @@
-import LocaleSwitch from '@/components/locale_switch';
-import {NextIntlClientProvider} from 'next-intl';
-import {getLocale, getMessages} from 'next-intl/server';
- 
+import "./globals.css";
+import clsx from 'clsx';
+
+import Background from '@/components/Background';
+import { heebo, philosopher } from '@/components/fonts';
+import { Header } from '@/components/Header/Header';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
+
 export default async function RootLayout({
   children
 }: {
@@ -9,12 +14,19 @@ export default async function RootLayout({
 }) {
   const locale = await getLocale();
   const messages = await getMessages();
- 
+  const isHebrew = locale === 'he';
+
   return (
-    <html lang={locale} dir={locale === 'he' ? 'rtl' : 'ltr'}>
-      <body>
+    <html lang={locale} dir={isHebrew ? 'rtl' : 'ltr'}>
+      <body className={
+        clsx('relative overflow-x-hidden',
+          isHebrew && heebo.className,
+          !isHebrew && philosopher.className
+        )
+      }>
         <NextIntlClientProvider messages={messages}>
-            <LocaleSwitch />
+          <Header />
+          <Background />
           {children}
         </NextIntlClientProvider>
       </body>
