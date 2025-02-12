@@ -1,3 +1,4 @@
+import { BurgerMenu } from "./BurgerMenu"
 import { LangSwitch } from "./LangSwitch"
 import { Logo } from "./Logo"
 import { NavMenu } from "./NavMenu"
@@ -12,9 +13,9 @@ export const Header = () => {
       </div>
       <div className="container mx-auto justify-between flex sm:hidden">
         <Logo />
-        <div className="flex flex-col items-center justify-around ">
-          <NavMenu />
+        <div className="flex items-center justify-around ">
           <LangSwitch  />
+          <BurgerMenu />
         </div>
       </div>
     </header>

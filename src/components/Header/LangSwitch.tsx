@@ -7,7 +7,7 @@ import HebFlag from "@/images/flags/heb.svg";
 import EngFlag from "@/images/flags/eng.svg";
 import clsx from "clsx";
 import { useLocale } from "next-intl";
-import { setUserLocale } from "@/services/locale";
+import { setUserLocale } from "@/i18n/locale";
 import { Locale } from "@/i18n/config";
 
 const langFlags = [{
