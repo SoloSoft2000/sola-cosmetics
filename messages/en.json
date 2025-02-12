@@ -11,7 +11,7 @@
   "posts" : {
     "title": "All posts"
   },
-  "photos": {
+  "PolaroidTitles": {
     "photo1": "Welcome",
     "photo2": "The World of Beauty",
     "photo3": "The World of Harmony",

@@ -19,7 +19,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={isHebrew ? 'rtl' : 'ltr'}>
       <body className={
-        clsx('relative overflow-x-hidden',
+        clsx('relative overflow-x-hidden min-h-screen',
           isHebrew && heebo.className,
           !isHebrew && philosopher.className
         )
@@ -28,6 +28,11 @@ export default async function RootLayout({
           <Header />
           <Background />
           {children}
+          <footer className="absolute bottom-0 mx-auto w-full">
+          <div className="text-center p-4">
+            Made by <span className="text-[#e7687f]">Solomonik Eugene!</span>
+          </div>
+        </footer>
         </NextIntlClientProvider>
       </body>
     </html>

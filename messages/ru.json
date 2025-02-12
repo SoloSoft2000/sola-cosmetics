@@ -11,7 +11,7 @@
   "posts" : {
     "title": "Все статьи"
   },
-  "photos": {
+  "PolaroidTitles": {
     "photo1": "Добро пожаловать",
     "photo2": "Мир Красоты",
     "photo3": "Мир Гармонии",
