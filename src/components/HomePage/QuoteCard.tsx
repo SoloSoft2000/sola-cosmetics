@@ -73,7 +73,7 @@ const QuoteCard = () => {
         >
           <blockquote
             className={clsx(
-              "text-sm md:text-xl italic text-[#e7687f]",
+              "text-sm md:text-xl italic text-primary",
               isHebrew && "text-right",
               !isHebrew && "text-left"
             )}
