@@ -1,5 +1,5 @@
 {
-  "home" : {
+  "home": {
     "subtitle": "Welcome to the World of",
     "title": "Beauty and Harmony!",
     "contact": "Contact with me",
@@ -8,7 +8,7 @@
   "Navigation": {
     "MenuNames": "Home|Blog|Contact"
   },
-  "posts" : {
+  "posts": {
     "title": "All posts"
   },
   "PolaroidTitles": {
@@ -17,15 +17,9 @@
     "photo3": "The World of Harmony",
     "photo4": "Stay with Israel"
   },
-  "quotesTitle": "Famous Beauty Quotes",
-  "quotes": [
-    {"name": "Coco Chanel", "text": "Beauty is a ray of light in everyday grey."},
-    {"name": "Pat McGrath", "text": "Makeup artistry is a way to highlight your uniqueness."},
-    {"name": "Tadashi Shoji", "text": "By creating beauty, we create harmony that heals the soul."},
-    {"name": "Charlotte Tilbury", "text": "Fashion trends may change, but style is what lasts."},
-    {"name": "Estée Lauder", "text": "A perfect look reflects your inner confidence."},
-    {"name": "Lisa Eldridge", "text": "Makeup is an art of transformation that helps us express our inner world."}
-  ],
+  "Quotes": {
+    "title": "Famous Beauty Quotes"
+  },
   "lastPosts": "Latest blog posts",
   "gotoPosts": "All posts",
   "readPost": "Read more..."

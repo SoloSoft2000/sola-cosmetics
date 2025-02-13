@@ -1,4 +1,5 @@
 import PolaroidPhotos from '@/components/HomePage/PolaroidPhotos';
+import QuoteCard from '@/components/HomePage/QuoteCard';
 import clsx from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -9,6 +10,7 @@ export default function HomePage() {
 
   return (
     <main>
+      {/* Welcome section with Polaroid Cards */}
       <section className="border-b-2 border-primary/25">
         <div className="container mx-auto ">
           <div className="flex flex-col lg:flex-row items-center justify-between lg:pt-8 ">
@@ -40,6 +42,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>      
+      {/* Quotes section */}
+      <section className="border-b-2 border-primary/25 bg-white">
+        <div className="container mx-auto">
+          <QuoteCard />
+        </div>
+      </section>
     </main>
   )
 }
