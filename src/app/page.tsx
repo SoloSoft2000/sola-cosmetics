@@ -1,5 +1,6 @@
 import PolaroidPhotos from '@/components/HomePage/PolaroidPhotos';
 import QuoteCard from '@/components/HomePage/QuoteCard';
+import { MyServices } from '@/components/MyServices/myservices';
 import clsx from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -47,6 +48,10 @@ export default function HomePage() {
         <div className="container mx-auto">
           <QuoteCard />
         </div>
+      </section>
+      {/* My Services section*/}
+      <section className="flex border-b-2 border-primary/25">
+        <MyServices />
       </section>
     </main>
   )

@@ -8,6 +8,9 @@
   "Navigation": {
     "MenuNames": "Home|Blog|Contact"
   },
+  "MyServices": {
+    "title": "Beauty Services"
+  },
   "posts": {
     "title": "All posts"
   },

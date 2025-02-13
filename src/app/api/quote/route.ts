@@ -1,7 +1,9 @@
+import { Locale } from "@/i18n/config";
 import { getLocale } from "next-intl/server";
 
-export async function GET() {
-    const locale =  await getLocale();
+export async function GET(request: Request) {
+    const url = new URL(request.url);
+    const lng = url.searchParams.get('lng') as Locale || await getLocale();
 
     const quotesList: { [key: string]: () => Promise<{ quotes: { name: string; text: string; }[]; }> } = {
         en: () => import('./quotes-en.json').then((module) => module.default),
@@ -10,7 +12,7 @@ export async function GET() {
         ru: () => import('./quotes-ru.json').then((module) => module.default),
     }
 
-    const { quotes } = await quotesList[locale]();
+    const { quotes } = await quotesList[lng]();
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const randomQuote = quotes[randomIndex];
     return Response.json(randomQuote);

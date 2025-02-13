@@ -8,6 +8,9 @@
   "Navigation": {
     "MenuNames": "Домашняя|Блог|Контакт"
   },
+  "MyServices": {
+    "title": "Beauty-услуги"
+  },
   "posts": {
     "title": "Все статьи"
   },
