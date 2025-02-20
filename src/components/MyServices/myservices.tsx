@@ -1,8 +1,10 @@
 "use client"
 
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ServiceItem from "./ServiceItem";
+import useAsync, { AsyncState } from "react-use/lib/useAsync";
+import clsx from "clsx";
 
 export type ServiceItemType = {
   image: string;
@@ -10,53 +12,42 @@ export type ServiceItemType = {
   description: string
 }
 
-const getTabStyles = (idx: number, active: number, length: number) => {
-  const isActive = active === idx;
-  let result = 'p-2 text-center lg:text-end md:py-12 lg:py-4 text-xl md:text-base lg:text-xl xl:text-lg ';
-  if (isActive) {
-    result += 'bg-transparent text-[#e7687f] ';
-    result += idx === 0 ? 'md:rounded-ss-2xl ' : idx === length - 1 ? 'md:rounded-es-2xl border-b-0 ' : 'md:rounded-s-2xl ';
-  } else {
-    result += 'bg-white ';
-    if (idx === active - 1)
-      result += 'md:rounded-ee-2xl '
-    if (idx === active + 1)
-      result += 'md:rounded-es-2xl lg:rounded-es-[0px] lg:rounded-se-2xl '
-  }
-  return result;
-}
-
 export const MyServices = () => {
-  const [servicesList, setList] = useState([] as ServiceItemType[]);
   const [activeService, setActiveService] = useState(0);
-
   const translatedData = useTranslations('MyServices');
   const lng = useLocale();
-  // const isHebrew = lng === 'he';
 
-  const handleServiceClick = (idx: number) => {
-    setActiveService(idx);
+  const { value: servicesList = [], loading, error }: AsyncState<ServiceItemType[]> = useAsync(async () => {
+      const res = await fetch(`/api/services?lng=${lng}`);
+      if (!res.ok) throw new Error("Failed to fetch services");
+      return res.json();
+  }, [lng]);
+
+  const getTabStyles = (idx: number) => {
+    const isActive = activeService === idx;
+    const isFirst = idx === 0;
+    const isLast = servicesList.length - 1;
+    return clsx(
+      'p-2 text-center lg:text-end md:py-12 lg:py-4 text-xl md:text-base lg:text-xl xl:text-lg',
+      isActive ? 'bg-transparent text-[#e7687f]' : 'bg-white',
+      isActive && isFirst && 'md:rounded-ss-2xl',
+      isActive && isLast && 'md:rounded-es-2xl border-b-0',
+      isActive && !isFirst && !isLast && 'md:rounded-s-2xl',
+      !isActive && idx === activeService - 1 && 'md:rounded-ee-2xl',
+      !isActive && idx === activeService + 1 && 'md:rounded-es-2xl lg:rounded-es-[0px] lg:rounded-se-2xl',
+    )
   };
 
-  useEffect(() => {
-    const fetchServices = async () => {
-      const servicesData = await fetch(`/api/services?lng=${lng}`);
-      const services: ServiceItemType[] = await servicesData.json();
-      setList(services);
-    }
-    fetchServices();
-  }, [lng])
-
-  if (!servicesList.length)
+  if (loading || error)
     return (
       <div className="container flex flex-col justify-between my-4">
         <div className="border-8 border-white bg-transparent/5 rounded-3xl mx-auto shadow-2xl">
           <h2 className="mx-auto text-base sm:text-xl lg:text-2xl text-center py-4 sm:py-6 h2 border-b-4 border-white">{translatedData("title")}</h2>
-          <h5> loading ... </h5>
+          <h5> {error ? `Error: ${error.message}` : "Loading..."} </h5>
         </div>
       </div>
     )
-
+  
   return (
     <div className="container flex flex-col justify-between my-4 mx-auto">
       <div className="border-8 border-white bg-transparent/5 rounded-3xl mx-auto shadow-2xl">
@@ -66,9 +57,9 @@ export const MyServices = () => {
             {servicesList.map((serviceItem, idx) => (
               <button
                 key={serviceItem.title}
-                onClick={() => handleServiceClick(idx)}
-                onMouseEnter={() => handleServiceClick(idx)}
-                className={getTabStyles(idx, activeService, servicesList.length)}
+                onClick={() => setActiveService(idx)}
+                onMouseEnter={() => setActiveService(idx)}
+                className={getTabStyles(idx)}
               >
                 <div className="rotate-0 text-sm lg:text-base md:-rotate-[65deg] md:leading-3 lg:rotate-0">{serviceItem.title}</div>
                 {idx === activeService && <div className="block md:hidden">
