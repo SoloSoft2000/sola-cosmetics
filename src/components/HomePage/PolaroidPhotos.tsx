@@ -1,8 +1,8 @@
 'use client'
 
-import Alena1Photo from "@/images/Alena1.jpg";
-import Alena2Photo from "@/images/Alena2.jpg";
-import Alena3Photo from "@/images/Alena3.jpg";
+import polaroidPhoto1 from "@/images/polaroids/polaroid1.jpg";
+import polaroidPhoto2 from "@/images/polaroids/polaroid2.jpg";
+import polaroidPhoto3 from "@/images/polaroids/polaroid3.jpg";
 import './Polaroid.css';
 import { PolaroidCard } from "./PolaroidCard";
 import { useEffect, useState } from "react";
@@ -14,9 +14,9 @@ const PolaroidPhotos = () => {
   const translatedData = useTranslations('PolaroidTitles');
 
   const photos = [
-    { src: Alena1Photo, caption: translatedData('photo1') },
-    { src: Alena2Photo, caption: translatedData('photo2') },
-    { src: Alena3Photo, caption: translatedData('photo3') },
+    { src: polaroidPhoto1, caption: translatedData('photo1') },
+    { src: polaroidPhoto2, caption: translatedData('photo2') },
+    { src: polaroidPhoto3, caption: translatedData('photo3') },
   ];
 
   const [currIndex, setCurrIndex] = useState(0);
