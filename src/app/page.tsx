@@ -1,6 +1,7 @@
 import PolaroidPhotos from '@/components/HomePage/PolaroidPhotos';
 import QuoteCard from '@/components/HomePage/QuoteCard';
 import { MyServices } from '@/components/MyServices/myservices';
+import { PostList } from '@/components/Posts/PostList';
 import clsx from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -52,6 +53,18 @@ export default function HomePage() {
       {/* My Services section*/}
       <section className="flex border-b-2 border-primary/25">
         <MyServices />
+      </section>
+      {/* Post section */}
+      <section className="flex border-b-2 border-primary/25">
+        <div className="container flex flex-col md:flex-row  justify-between md:gap-5">
+          <div className="w-full md:w-2/3">
+            <PostList isOnlyLast />
+          </div>
+          <div className="w-full md:w-1/3 flex flex-col items-center my-2 border-2 border-primary/25">
+            {/* <Contact translatedData={translatedData} isHome/> */}
+            <div>contact</div>
+          </div>
+        </div>
       </section>
     </main>
   )

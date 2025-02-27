@@ -12,7 +12,10 @@
     "title": "Beauty Services"
   },
   "posts": {
-    "title": "All posts"
+    "title": "All posts",
+    "lastPosts": "Latest blog posts",
+    "gotoPosts": "All posts",
+    "readPost": "Read more..."
   },
   "PolaroidTitles": {
     "photo1": "Welcome",
@@ -22,8 +25,5 @@
   },
   "Quotes": {
     "title": "Famous Beauty Quotes"
-  },
-  "lastPosts": "Latest blog posts",
-  "gotoPosts": "All posts",
-  "readPost": "Read more..."
+  }
 }
