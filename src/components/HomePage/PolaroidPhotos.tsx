@@ -5,9 +5,10 @@ import polaroidPhoto2 from "@/images/polaroids/polaroid2.jpg";
 import polaroidPhoto3 from "@/images/polaroids/polaroid3.jpg";
 import './Polaroid.css';
 import { PolaroidCard } from "./PolaroidCard";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import clsx from "clsx";
+import { useInterval } from "react-use";
 
 const PolaroidPhotos = () => {
   const isHebrew = useLocale() === 'he';
@@ -23,19 +24,14 @@ const PolaroidPhotos = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
-  useEffect(() => {
-    if (isHovered) return;
-    const intervalId = setInterval(() => {
-      if (isAnimating) return;
+  useInterval(() => {
       setIsAnimating(true);
       setTimeout(() => {
         setCurrIndex((prev) => (prev + 1) % photos.length);
         setIsAnimating(false);
       }, 1500);
-    }, 2500)
-    return () => clearInterval(intervalId);
-  }, [currIndex, isAnimating, photos.length, isHovered])
-
+    }, isHovered || isAnimating ? null : 2500)
+  
   const handleClick = () => {
     if (isAnimating) return;
     setIsAnimating(true);
