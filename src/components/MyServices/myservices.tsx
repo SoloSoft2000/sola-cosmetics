@@ -28,8 +28,8 @@ export const MyServices = () => {
     const isFirst = idx === 0;
     const isLast = servicesList.length - 1;
     return clsx(
-      'p-2 text-center lg:text-end md:py-12 lg:py-4 text-xl md:text-base lg:text-xl xl:text-lg',
-      isActive ? 'bg-transparent text-[#e7687f]' : 'bg-white',
+      'p-2 text-center lg:text-end md:py-12 lg:py-4 text-xl md:text-base lg:text-xl xl:text-lg duration-500',
+      isActive ? 'bg-transparent text-primary font-semibold' : 'bg-white',
       isActive && isFirst && 'md:rounded-ss-2xl',
       isActive && isLast && 'md:rounded-es-2xl border-b-0',
       isActive && !isFirst && !isLast && 'md:rounded-s-2xl',
@@ -58,7 +58,7 @@ export const MyServices = () => {
               <button
                 key={serviceItem.title}
                 onClick={() => setActiveService(idx)}
-                onMouseEnter={() => setActiveService(idx)}
+                // onMouseEnter={() => setActiveService(idx)}
                 className={getTabStyles(idx)}
               >
                 <div className="rotate-0 text-sm lg:text-base md:-rotate-[65deg] md:leading-3 lg:rotate-0">{serviceItem.title}</div>
