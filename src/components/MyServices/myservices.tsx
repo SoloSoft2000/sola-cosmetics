@@ -30,7 +30,7 @@ export const MyServices = () => {
     const isLast = servicesList.length - 1;
     return clsx(
       'p-2 text-center lg:text-end md:py-12 lg:py-4 text-xl md:text-base lg:text-xl xl:text-lg duration-500',
-      isActive ? 'bg-transparent text-primary font-semibold' : 'bg-white',
+      isActive ? 'bg-transparent text-primary font-semibold z-10' : 'bg-white',
       isActive && isFirst && 'md:rounded-ss-2xl',
       isActive && isLast && 'md:rounded-es-2xl border-b-0',
       isActive && !isFirst && !isLast && 'md:rounded-s-2xl',
@@ -63,9 +63,17 @@ export const MyServices = () => {
                 className={getTabStyles(idx)}
               >
                 <div className="rotate-0 text-sm lg:text-base md:-rotate-[65deg] md:leading-3 lg:rotate-0">{serviceItem.title}</div>
-                {idx === activeService && <div className="block md:hidden">
+                <AnimatePresence mode="wait">
+                {idx === activeService && <motion.div
+                  key={serviceItem.title}
+                  initial={{ scale: 0.2,  height: 0, opacity: 0 }}
+                  animate={{ scale: 1, height: "auto", opacity: 1 }}
+                  exit={{ scale: 0.2, height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="block md:hidden">
                   <ServiceItem item={serviceItem} />
-                </div>}
+                </motion.div>}
+                </AnimatePresence>
               </button>
             ))}
           </div>
