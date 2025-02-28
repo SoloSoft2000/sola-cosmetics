@@ -20,7 +20,7 @@ export const PostCard = async ({ post }: PostProps) => {
   const t = await getTranslations('posts');
   return (
     <Link href={`/posts/${post.slug}`}>
-      <div className="flex flex-col font-sans bg-white p-2 mb-4 border-2 rounded-2xl shadow-xl">
+      <div className="flex flex-col font-sans bg-slate-50 p-2 mb-4 border-2 rounded-2xl shadow-xl hover:scale-[101%] hover:bg-white  hover:shadow-primary/50 duration-500">
         <div className="w-full flex flex-col justify-between px-4">
           <div className="text-xs font-light text-slate-400">
             {new Date(post.date).toLocaleDateString()}

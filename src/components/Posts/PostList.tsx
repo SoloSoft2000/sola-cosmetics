@@ -2,9 +2,8 @@ import { PostCard, PostType } from "./PostCard";
 import { rubik } from "@/components/fonts";
 import Link from "next/link";
 import clsx from "clsx";
-import { getUserLocale } from "@/i18n/locale";
 import { Locale } from "@/i18n/config";
-import {getTranslations} from 'next-intl/server';
+import {getLocale, getTranslations} from 'next-intl/server';
 
 export const revalidate = 3600;
 type PostListProps = {
@@ -12,7 +11,7 @@ type PostListProps = {
 }
 export const PostList = async ({ isOnlyLast }: PostListProps) => {
   
-  const lng = (await getUserLocale()) as Locale;
+  const lng = (await getLocale()) as Locale;
   const baseUrl =
     process.env.NEXT_PUBLIC_BASE_URL ||
     "http://localhost:3000";

@@ -56,7 +56,7 @@ export default function HomePage() {
       </section>
       {/* Post section */}
       <section className="flex border-b-2 border-primary/25">
-        <div className="container flex flex-col md:flex-row  justify-between md:gap-5">
+        <div className="container mx-auto flex flex-col md:flex-row  justify-between md:gap-5">
           <div className="w-full md:w-2/3">
             <PostList isOnlyLast />
           </div>

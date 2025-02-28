@@ -18,7 +18,7 @@ export default function ServiceItem({ item }: { item: ServiceItemType }) {
 
   return (
     <div className="md:rounded-e-[16px] ">
-      <div className="flex mx-6 my-4 p-4 border-2 rounded-2xl bg-white shadow-xl">
+      <div className="flex mx-6 my-4 p-4 border-2 rounded-2xl bg-white shadow-xl shadow-primary/25">
         <div className="hidden md:block">
           <Image src={images[item.image]} alt="" width={160} height={240} className="rounded-2xl float-left  py-auto h-60 w-auto" />
         </div>
