@@ -5,6 +5,7 @@ import { useState } from "react";
 import ServiceItem from "./ServiceItem";
 import useAsync, { AsyncState } from "react-use/lib/useAsync";
 import clsx from "clsx";
+import { AnimatePresence, motion } from "motion/react";
 
 export type ServiceItemType = {
   image: string;
@@ -68,9 +69,17 @@ export const MyServices = () => {
               </button>
             ))}
           </div>
-          <div className="hidden md:block w-full rounded-e-3xl">
-            <ServiceItem item={servicesList[activeService]} />
-          </div>
+          <AnimatePresence mode="wait">
+            <motion.div 
+             key={servicesList[activeService].title}
+             initial={{ opacity: 0, x: 5 }}
+             animate={{ opacity: 1, x: 0 }}
+             exit={{ opacity: 0, x: 5 }}
+             transition={{ duration: 0.3 }}
+             className="hidden md:block w-full rounded-e-3xl my-auto">
+              <ServiceItem item={servicesList[activeService]} />
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>
