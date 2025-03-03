@@ -28,7 +28,7 @@ export const PostList = async ({ isOnlyLast }: PostListProps) => {
   }
   const posts = isOnlyLast ? allList.slice(0, 4) : allList;
   return (
-    <div className={clsx("flex flex-col", !isOnlyLast && "py-12")}>
+    <div className={clsx("flex flex-col mx-2", !isOnlyLast && "py-12")}>
       {isOnlyLast && (
         <div className="flex justify-between px-8 py-8">
           <h2 className={`text-2xl text-primary ${rubik.className}`}>{t("lastPosts")}:</h2>
