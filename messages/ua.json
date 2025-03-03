@@ -25,5 +25,17 @@
   },
   "Quotes": {
     "title": "Відомі цитати про красу"
+  },
+  "Contact": {
+    "title": "Зв'язатися з нами",
+    "name": "Ім'я",
+    "email": "E-mail",
+    "phone": "Телефон",
+    "message": "Повідомлення",
+    "send": "Надіслати",
+    "namePlaceHolder": "Введіть ваше ім'я",
+    "phonePlaceHolder": "ваш телефон",
+    "emailPlaceHolder": "або ваш e-mail",
+    "messagePlaceHolder": "ваше повідомлення"
   }
 }

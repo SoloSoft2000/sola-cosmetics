@@ -41,10 +41,10 @@ export const PostList = async ({ isOnlyLast }: PostListProps) => {
         ))}
       </div>
       {isOnlyLast && (
-        <div className="p-2 mr-4 ml-auto my-4">
+        <div className="p-2 mr-4 ml-auto my-4 hover:scale-105 transition-transform ">
           <Link
             href="/posts"
-            className="text-center rounded-full p-4 bg-primary text-white hover:scale-110 transition-transform shadow-stone-400 shadow-lg"
+            className="text-center rounded-full p-4 bg-primary text-white shadow-stone-400 shadow-lg"
           >
             {t("gotoPosts")}
           </Link></div>

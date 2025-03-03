@@ -1,3 +1,4 @@
+import { Contact } from '@/components/Contact/Contact';
 import PolaroidPhotos from '@/components/HomePage/PolaroidPhotos';
 import QuoteCard from '@/components/HomePage/QuoteCard';
 import { MyServices } from '@/components/MyServices/myservices';
@@ -31,7 +32,7 @@ export default function HomePage() {
                   {translatedData("desc")}
                 </p>
                 <div className={clsx("flex justify-center lg:justify-end", isHebrew ? 'lg:ml-20' : 'lg:mr-20')} >
-                  <Link className="text-center rounded-full p-4 bg-primary text-white hover:scale-110 transition-transform shadow-stone-400 shadow-lg" href="/contact">
+                  <Link className="text-center rounded-full p-4 bg-primary text-white hover:scale-105 transition-transform shadow-stone-400 shadow-lg" href="/contact">
                     {translatedData("contact")}
                   </Link>
                 </div>
@@ -60,9 +61,8 @@ export default function HomePage() {
           <div className="w-full md:w-2/3">
             <PostList isOnlyLast />
           </div>
-          <div className="w-full md:w-1/3 flex flex-col items-center my-2 border-2 border-primary/25">
-            {/* <Contact translatedData={translatedData} isHome/> */}
-            <div>contact</div>
+          <div className="w-full md:w-1/3 flex flex-col items-center my-2 py-10">
+            <Contact isHome/>
           </div>
         </div>
       </section>

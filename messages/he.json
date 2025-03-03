@@ -25,5 +25,17 @@
   },
   "Quotes": {
     "title": "ציטוטים מפורסמים על יופי"
+  },
+  "Contact": {
+    "title": "יצירת קשר",
+    "name": "שם",
+    "email": "דואר אלקטרוני",
+    "phone": "טלפון",
+    "message": "הודעה",
+    "send": "שלח",
+    "namePlaceHolder": "שם",
+    "phonePlaceHolder": "טלפון",
+    "emailPlaceHolder": "דואר אלקטרוני",
+    "messagePlaceHolder": "הודעה"
   }
 }
