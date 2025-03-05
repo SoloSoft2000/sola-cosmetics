@@ -27,15 +27,15 @@
     "title": "Известные цитаты про красоту"
   },
   "Contact": {
-    "title": "Свяжитесь с нами",
+    "title": "Свяжитесь со мной",
     "name": "Имя",
     "email": "E-mail",
     "phone": "Телефон",
     "message": "Сообщение",
     "send": "Отправить",
     "namePlaceHolder": "Введите ваше имя",
-    "phonePlaceHolder": "ваш телефон",
-    "emailPlaceHolder": "или ваш e-mail",
-    "messagePlaceHolder": "ваше сообщение"
+    "phonePlaceHolder": "Ваш телефон",
+    "emailPlaceHolder": "Ваш e-mail",
+    "messagePlaceHolder": "Ваше сообщение"
   }
 }

@@ -27,15 +27,15 @@
     "title": "Famous Beauty Quotes"
   },
   "Contact": {
-    "title": "Contact",
+    "title": "Contact with me",
     "name": "Name",
     "email": "Email",
     "phone": "Phone",
     "message": "Message",
     "send": "Send",
     "namePlaceHolder": "Enter your name",
-    "phonePlaceHolder": "your phone",
-    "emailPlaceHolder": "or your email",
-    "messagePlaceHolder": "your message"
+    "phonePlaceHolder": "Your phone",
+    "emailPlaceHolder": "Your email",
+    "messagePlaceHolder": "Your message"
   }
 }
