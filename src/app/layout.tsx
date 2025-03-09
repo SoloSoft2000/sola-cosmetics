@@ -29,7 +29,7 @@ export default async function RootLayout({
           <Background />
           {children}
           <footer className="mx-auto w-full">
-          <div className="text-center p-4">
+          <div className="text-center p-4" dir="ltr">
             Made by <span className="text-[#e7687f]">Solomonik Eugene!</span>
           </div>
         </footer>

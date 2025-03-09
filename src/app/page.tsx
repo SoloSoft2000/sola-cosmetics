@@ -1,3 +1,4 @@
+import { Album } from '@/components/Album/Album';
 import { Contact } from '@/components/Contact/Contact';
 import PolaroidPhotos from '@/components/HomePage/PolaroidPhotos';
 import QuoteCard from '@/components/HomePage/QuoteCard';
@@ -65,6 +66,10 @@ export default function HomePage() {
             <Contact isHome/>
           </div>
         </div>
+      </section>
+      {/* Album section */}
+      <section className="flex border-b-2 border-primary/25  relative">
+        <Album />
       </section>
     </main>
   )
