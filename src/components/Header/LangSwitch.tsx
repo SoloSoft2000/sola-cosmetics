@@ -28,7 +28,7 @@ export const LangSwitch = () => {
   const currentLng = useLocale();
   
   return (
-    <div className="flex items-center justify-around">
+    <div className="flex items-center justify-around z-50">
       {
         langFlags.map(({lng, flag}) => {
           const isActive = lng === currentLng;
