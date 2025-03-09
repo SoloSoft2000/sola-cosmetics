@@ -62,7 +62,7 @@ export default function HomePage() {
           <div className="w-full md:w-2/3">
             <PostList isOnlyLast />
           </div>
-          <div className="w-full md:w-1/3 flex flex-col items-center my-2 py-10">
+          <div id="contact" className="w-full md:w-1/3 flex flex-col items-center my-2 py-10">
             <Contact isHome/>
           </div>
         </div>

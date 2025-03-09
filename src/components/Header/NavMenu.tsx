@@ -9,7 +9,7 @@ import { MenuItem } from "./MenuItem";
 export const NavMenu = () => {
   const t = useTranslations('Navigation');
   const itemNames = t('MenuNames').split("|");
-  const menuItems = ["/", "/posts", "/contact"];
+  const menuItems = ["/", "/posts", "#contact"];
   const pathName = usePathname();
 
   return (
