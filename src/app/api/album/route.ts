@@ -3,7 +3,7 @@ import path from "path";
 
 const pathToAlbum = path.join(process.cwd(), 'public', 'assets', 'album');
 
-export const getImageList = async () => {
+const getImageList = async () => {
     try {
         const filenames = await fs.readdir(path.join(pathToAlbum));
         const randomList = filenames.sort(() => 0.5 - Math.random());
