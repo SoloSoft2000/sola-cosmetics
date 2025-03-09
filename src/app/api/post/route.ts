@@ -1,6 +1,7 @@
+import { NextRequest } from "next/server";
 import { getPostById, getPostList } from "./postUtils";
 
-export async function GET(request: { url: string }) {
+export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const lng = searchParams.get("lng") || "en";
   const filename = searchParams.get("filename") || "";
