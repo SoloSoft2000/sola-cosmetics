@@ -1,5 +1,41 @@
 {
-    "HomePage": {
-        "title": "Hello world!"
-    }
+  "home": {
+    "subtitle": "Welcome to the World of",
+    "title": "Beauty and Harmony!",
+    "contact": "Contact with me",
+    "desc": "Hi! I'm Alena, a cosmetologist. My goal is to help everyone reveal their natural beauty and gain confidence. A personalized approach allows me to highlight unique features and achieve harmony. With me, you are in for a journey into the world of beauty."
+  },
+  "Navigation": {
+    "MenuNames": "Home|Blog|Contact"
+  },
+  "MyServices": {
+    "title": "Beauty Services"
+  },
+  "posts": {
+    "title": "All posts",
+    "lastPosts": "Latest blog posts",
+    "gotoPosts": "All posts",
+    "readPost": "Read more..."
+  },
+  "PolaroidTitles": {
+    "photo1": "Welcome",
+    "photo2": "The World of Beauty",
+    "photo3": "The World of Harmony",
+    "photo4": "Stay with Israel"
+  },
+  "Quotes": {
+    "title": "Famous Beauty Quotes"
+  },
+  "Contact": {
+    "title": "Contact with me",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send",
+    "namePlaceHolder": "Enter your name",
+    "phonePlaceHolder": "Your phone",
+    "emailPlaceHolder": "Your email",
+    "messagePlaceHolder": "Your message"
+  }
 }

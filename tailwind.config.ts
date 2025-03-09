@@ -8,7 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      },
       colors: {
+        primary: "#e7687f",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },

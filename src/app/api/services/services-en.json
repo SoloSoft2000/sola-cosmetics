@@ -1,0 +1,39 @@
+{
+  "services": [
+    {
+      "image": "diagnose",
+      "title": "Diagnosis and Consultation",
+      "description": "Skin diagnostics help identify individual characteristics and issues: skin type, moisture level, presence of inflammation, and pigmentation. Based on the diagnostics, a personalized skincare plan is created, and suitable products are selected. The consultation helps you understand the basics of skincare to strengthen the skin, improve its appearance, and prevent aging changes."
+    },
+    {
+      "image": "cleanFace",
+      "title": "Facial Cleansing",
+      "description": "Facial cleansing helps deeply clean pores, remove excess sebum, and prevent breakouts. The procedure includes several methods: hardware cleansing for impurity removal, galvanic and acid treatments for skin restoration, as well as mechanical cleansing. This comprehensive approach improves skin texture, giving it a fresh and well-groomed appearance."
+    },
+    {
+      "image": "antiAge",
+      "title": "Rejuvenating Treatments",
+      "description": "Rejuvenating treatments include microneedling, electroporation, and needle-free mesotherapy. These techniques help activate cell regeneration, strengthen the skin, enhance its elasticity, and reduce visible signs of aging. Thanks to their gentle effect, the skin looks fresher, smoother, and gains a radiant tone while maintaining its natural beauty and health."
+    },
+    {
+      "image": "lightening",
+      "title": "Skin Brightening and Pigmentation Correction",
+      "description": "Skin brightening is an effective way to improve skin tone and prevent new pigmentation spots. Specialized procedures help lighten existing spots, even out complexion, and give the skin a more uniform tone. Regular treatments prevent further pigmentation formation, keeping the skin radiant and healthy."
+    },
+    {
+      "image": "bodyFace",
+      "title": "Face and Body Care",
+      "description": "Face and body care includes depilation, sugaring, brow and eyelash shaping and coloring. These procedures make the skin smooth and soft, while enhancing the expressiveness of brows and eyelashes. Laminating strengthens and adds volume to hairs, highlighting the natural beauty of the eyes and creating a harmonious everyday look."
+    },
+    {
+      "image": "massage",
+      "title": "Facial Massage",
+      "description": "Facial massage is a technique that improves blood circulation, relieves tension, and refreshes the skin. Lymphatic, plastic, Japanese Kobido, and Shiatsu massages help reduce puffiness, eliminate muscle tightness, and stimulate skin regeneration. These massages are an excellent preventive measure against aging and provide a sense of relaxation."
+    },
+    {
+      "image": "problems",
+      "title": "Problem Skin Prevention",
+      "description": "Treating acne, seborrhea, and dermatitis requires a special approach. Procedures use anti-inflammatory and soothing agents aimed at cleansing and restoring the skin. A personalized skincare selection helps reduce inflammation, improve skin texture, and restore its health. Regular treatments make the skin more resilient and protected from external factors."
+    }
+  ]
+}
