@@ -9,6 +9,7 @@ export const getImageList = async () => {
         const randomList = filenames.sort(() => 0.5 - Math.random());
         return randomList.map(filename => `/assets/album/${filename}`);
     } catch (error) {
+        console.log(error);
         return undefined;
     }
 };
