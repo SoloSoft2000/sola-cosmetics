@@ -1,8 +1,8 @@
 'use client'
 
-import polaroidPhoto1 from "@/images/polaroids/polaroid1.jpg";
-import polaroidPhoto2 from "@/images/polaroids/polaroid2.jpg";
-import polaroidPhoto3 from "@/images/polaroids/polaroid3.jpg";
+import polaroidPhoto1 from "@/images/polaroids/polaroid1.webp";
+import polaroidPhoto2 from "@/images/polaroids/polaroid2.webp";
+import polaroidPhoto3 from "@/images/polaroids/polaroid3.webp";
 import './Polaroid.css';
 import { PolaroidCard } from "./PolaroidCard";
 import { useState } from "react";

@@ -51,6 +51,10 @@ export default function HomePage() {
           <QuoteCard />
         </div>
       </section>
+      {/* My Services section*/}
+      <section className="flex border-b-2 border-primary/25">
+        <MyServices />
+      </section>
       {/* Post section */}
       <section className="flex border-b-2 border-primary/25">
         <div className="container mx-auto flex flex-col md:flex-row  justify-between md:gap-5">
@@ -62,9 +66,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* My Services section*/}
-      <section className="flex border-b-2 border-primary/25">
-        <MyServices />
+      {/* Album section */}
+      <section className="flex border-b-2 border-primary/25  relative">
+        <Album />
       </section>
 
 
