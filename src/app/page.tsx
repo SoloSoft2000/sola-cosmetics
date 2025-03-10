@@ -68,7 +68,7 @@ export default function HomePage() {
       <section className="flex border-b-2 border-primary/25">
         <MyServices />
       </section>
-      {/* Album section */}
+      {/* Album section 1*/}
       <section className="flex border-b-2 border-primary/25  relative">
         <Album />
       </section>
