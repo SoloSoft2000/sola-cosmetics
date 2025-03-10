@@ -1,4 +1,3 @@
-import { Album } from '@/components/Album/Album';
 import { Contact } from '@/components/Contact/Contact';
 import PolaroidPhotos from '@/components/HomePage/PolaroidPhotos';
 import QuoteCard from '@/components/HomePage/QuoteCard';
@@ -7,7 +6,7 @@ import { PostList } from '@/components/Posts/PostList';
 import clsx from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
- 
+
 export default function HomePage() {
   const translatedData = useTranslations('home');
   const isHebrew = useLocale() === 'he';
@@ -45,16 +44,12 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>      
+      </section>
       {/* Quotes section */}
       <section className="border-b-2 border-primary/25 bg-white">
         <div className="container mx-auto">
           <QuoteCard />
         </div>
-      </section>
-      {/* My Services section*/}
-      <section className="flex border-b-2 border-primary/25">
-        <MyServices />
       </section>
       {/* Post section */}
       <section className="flex border-b-2 border-primary/25">
@@ -63,14 +58,16 @@ export default function HomePage() {
             <PostList isOnlyLast />
           </div>
           <div id="contact" className="w-full md:w-1/3 flex flex-col items-center my-2 py-10">
-            <Contact isHome/>
+            <Contact isHome />
           </div>
         </div>
       </section>
-      {/* Album section */}
-      <section className="flex border-b-2 border-primary/25  relative">
-        <Album />
+      {/* My Services section*/}
+      <section className="flex border-b-2 border-primary/25">
+        <MyServices />
       </section>
+
+
     </main>
   )
 }
