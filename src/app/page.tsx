@@ -1,4 +1,5 @@
 import { Album } from '@/components/Album/Album';
+import { AlbumSkeleton } from '@/components/Album/AlbumSkeleton';
 import { Contact } from '@/components/Contact/Contact';
 import PolaroidPhotos from '@/components/HomePage/PolaroidPhotos';
 import QuoteCard from '@/components/HomePage/QuoteCard';
@@ -7,6 +8,7 @@ import { PostList } from '@/components/Posts/PostList';
 import clsx from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 export default function HomePage() {
   const translatedData = useTranslations('home');
@@ -33,7 +35,7 @@ export default function HomePage() {
                   {translatedData("desc")}
                 </p>
                 <div className={clsx("flex justify-center lg:justify-end", isHebrew ? 'lg:ml-20' : 'lg:mr-20')} >
-                  <Link className="text-center rounded-full p-4 bg-primary text-white hover:scale-105 transition-transform shadow-stone-400 shadow-lg" href="/contact">
+                  <Link className="text-center rounded-full p-4 bg-primary text-white hover:scale-105 transition-transform shadow-stone-400 shadow-lg" href="/#contact">
                     {translatedData("contact")}
                   </Link>
                 </div>
@@ -70,7 +72,9 @@ export default function HomePage() {
       </section>
       {/* Album section 1*/}
       <section className="flex border-b-2 border-primary/25  relative">
-        <Album />
+        <Suspense fallback={<AlbumSkeleton />}>
+          <Album />
+        </Suspense>
       </section>
     </main>
   )
