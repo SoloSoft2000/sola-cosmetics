@@ -35,7 +35,7 @@ export const PostList = async ({ isOnlyLast }: PostListProps) => {
         </div>
       )}
 
-      <div className={`md:grid grid-cols-2 gap-8`}>
+      <div className={clsx(isOnlyLast && `md:grid grid-cols-2 gap-8`)}>
         {posts.map((post: PostType, index: number) => (
           <PostCard key={`post-${index}`} post={post} />
         ))}
