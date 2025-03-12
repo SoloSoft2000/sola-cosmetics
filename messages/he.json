@@ -13,9 +13,12 @@
   },
   "posts": {
     "title": "הכל",
-  "lastPosts": "פוסטים חדשים בבלוג",
-  "gotoPosts": "לקראו הכל",
-  "readPost": "לקראו..."
+    "lastPosts": "פוסטים חדשים בבלוג",
+    "gotoPosts": "לקראו הכל",
+    "readPost": "לקראו...",
+    "contents": "תוכן:",
+    "like": "האם אתם מעוניינים?",
+    "share": "תשובו לחברים"
   },
   "PolaroidTitles": {
     "photo1": "ברוכים הבאים",

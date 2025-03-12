@@ -15,7 +15,10 @@
     "title": "All posts",
     "lastPosts": "Latest blog posts",
     "gotoPosts": "All posts",
-    "readPost": "Read more..."
+    "readPost": "Read more...",
+    "contents": "Contents:",
+    "like": "Do you like the article?",
+    "share": "Share with friends"
   },
   "PolaroidTitles": {
     "photo1": "Welcome",
