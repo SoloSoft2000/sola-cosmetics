@@ -5,7 +5,7 @@ import { EmailIcon, EmailShareButton, FacebookIcon, FacebookShareButton, Telegra
 
 const style = { filter: "drop-shadow(2px 3px 4px gray)"};
 const cls = "hover:scale-105 duration-300 h-6 w-6 xl:h-8 xl:w-8";
-const baseUrl = process.env.DOMAINNAME || 'http://localhost:3000';
+const baseUrl = process.env.NEXT_PUBLIC_DOMAINNAME || 'http://localhost:3000';
 
 export const ShareButtons = () => {
   const url = usePathname();
