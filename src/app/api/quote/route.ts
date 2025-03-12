@@ -8,7 +8,7 @@ export async function GET(request: Request) {
     const quotesList: { [key: string]: () => Promise<{ quotes: { name: string; text: string; }[]; }> } = {
         en: () => import('./quotes-en.json').then((module) => module.default),
         he: () => import('./quotes-he.json').then((module) => module.default),
-        ua: () => import('./quotes-ua.json').then((module) => module.default),
+        uk: () => import('./quotes-uk.json').then((module) => module.default),
         ru: () => import('./quotes-ru.json').then((module) => module.default),
     }
 

@@ -8,7 +8,7 @@ export async function GET(request: Request) {
     const servicesList: { [key: string]: () => Promise<{ services: { image: string; title: string; description: string }[]; }> } = {
         en: () => import('./services-en.json').then((module) => module.default),
         he: () => import('./services-he.json').then((module) => module.default),
-        ua: () => import('./services-ua.json').then((module) => module.default),
+        uk: () => import('./services-uk.json').then((module) => module.default),
         ru: () => import('./services-ru.json').then((module) => module.default),
     };
 
