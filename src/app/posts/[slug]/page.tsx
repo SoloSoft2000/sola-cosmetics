@@ -42,7 +42,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           {post.title}
         </h1>
         <div className="grid grid-cols-4">
-          <div className="w-full mx-auto col-span-3">
+          <div className="w-full mx-auto col-span-4 lg:col-span-3">
             {articles.map((part, idx) => (
               <div className="p-2" key={idx} id={`article${idx}`}>
                 <h2
@@ -57,15 +57,15 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
                   <SubContent content={part.content} />
                 )}
                 {!Array.isArray(part.content) && (
-                  <p className="text-base lg:text-lg text-justify">
+                  <p className="text-sm md:text-base lg:text-lg text-justify">
                     {part.content}
                   </p>
                 )}
               </div>
             ))}
           </div>
-          <div>
-            <div className="py-4 px-1 bg-white rounded-xl shadow-xl w-3/4 float-end">
+          <div className="hidden lg:block">
+            <div className=" py-4 ml-4 px-1 bg-white rounded-xl shadow-xl float-end w-[90%]">
               <h3 className="text-center text-primary">
                 {translatedData("contents")}
               </h3>
@@ -85,17 +85,33 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 ))}
               </ul>
             </div>
-            <div className="mt-4 py-4 px-1 bg-white rounded-xl shadow-xl w-3/4 float-end">
+            <div className="mt-4  py-4 ml-4 px-1 bg-white rounded-xl shadow-xl float-end w-[90%]">
               <h3 className="text-center text-primary">
-                {translatedData("like")}<br />
-                <span className="text-base text-black">{translatedData("share")}</span>
+                {translatedData("like")}
+                <br />
+                <span className="text-base text-black">
+                  {translatedData("share")}
+                </span>
               </h3>
               <div className="flex justify-around mx-auto my-3">
                 <ShareButtons />
               </div>
             </div>
           </div>
+          
         </div>
+        <div className="block lg:hidden max-w-80 rounded-xl shadow-lg m-6 p-6 mx-auto bg-white">
+            <h3 className="text-center text-primary">
+              {translatedData("like")}
+              <br />
+              <span className="text-base text-black">
+                {translatedData("share")}
+              </span>
+            </h3>
+            <div className="flex justify-around mx-auto my-3">
+              <ShareButtons />
+            </div>
+          </div>
       </div>
     </div>
   );

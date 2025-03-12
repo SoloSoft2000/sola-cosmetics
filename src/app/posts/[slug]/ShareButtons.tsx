@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { EmailIcon, EmailShareButton, FacebookIcon, FacebookShareButton, TelegramIcon, TelegramShareButton, TwitterIcon, TwitterShareButton, ViberIcon, ViberShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 
 const style = { filter: "drop-shadow(2px 3px 4px gray)"};
+const cls = "hover:scale-105 duration-300 h-6 w-6 xl:h-8 xl:w-8";
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export const ShareButtons = () => {
@@ -13,27 +14,27 @@ export const ShareButtons = () => {
     <>
 
       <WhatsappShareButton url={shareUrl}>
-        <WhatsappIcon round style={style} className="hover:scale-105 duration-300 h-4 w-4 lg:h-6 lg:w-6 xl:h-8 xl:w-8" />
+        <WhatsappIcon round style={style} className={cls} />
       </WhatsappShareButton>
 
       <TelegramShareButton url={shareUrl}>
-        <TelegramIcon round style={style} className="hover:scale-105 duration-300 h-4 w-4 lg:h-6 lg:w-6 xl:h-8 xl:w-8" />
+        <TelegramIcon round style={style} className={cls} />
       </TelegramShareButton>
 
       <ViberShareButton url={shareUrl}>
-        <ViberIcon round style={style} className="hover:scale-105 duration-300 h-4 w-4 lg:h-6 lg:w-6 xl:h-8 xl:w-8" />
+        <ViberIcon round style={style} className={cls} />
       </ViberShareButton>
 
       <TwitterShareButton url={shareUrl}>
-        <TwitterIcon round style={style} className="hover:scale-105 duration-300 h-4 w-4 lg:h-6 lg:w-6 xl:h-8 xl:w-8" />
+        <TwitterIcon round style={style} className={cls} />
       </TwitterShareButton>
 
       <EmailShareButton url={shareUrl}>
-        <EmailIcon round style={style} className="hover:scale-105 duration-300 h-4 w-4 lg:h-6 lg:w-6 xl:h-8 xl:w-8" />
+        <EmailIcon round style={style} className={cls} />
       </EmailShareButton>
 
       <FacebookShareButton url={shareUrl}>
-        <FacebookIcon round style={style} className="hover:scale-105 duration-300 h-4 w-4 lg:h-6 lg:w-6 xl:h-8 xl:w-8"/>
+        <FacebookIcon round style={style} className={cls} />
       </FacebookShareButton>
     </>
   );
