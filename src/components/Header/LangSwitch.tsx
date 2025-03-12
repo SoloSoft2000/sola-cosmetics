@@ -17,7 +17,7 @@ const langFlags = [{
   lng: "he",
   flag: HebFlag
 }, {
-  lng: "ua",
+  lng: "uk",
   flag: UkrFlag
 }, {
   lng: "ru",
