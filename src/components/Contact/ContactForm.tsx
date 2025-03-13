@@ -1,10 +1,12 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import { rubik } from "../fonts";
 import Link from "next/link";
 import { IoLogoFacebook, IoLogoWhatsapp, IoMail } from "react-icons/io5";
 import { FaPhone } from "react-icons/fa6";
 import Form from 'next/form';
-import  { sendEmail }  from "./actions";
+import  { sendNotification }  from "./actions";
 
 const style = { filter: "drop-shadow(2px 3px 4px gray)"};
 
@@ -12,7 +14,7 @@ export const ContactForm = () => {
   const translatedData = useTranslations('Contact');
   return (
     <div className="w-80 md:w-60 lg:w-80 bg-white rounded-xl shadow-xl ring-1 ring-slate-900/5 mx-auto">
-      <Form action={sendEmail}>
+      <Form action={sendNotification}>
         <h2 className={`text-2xl text-primary ${rubik.className} pt-4 pb-2 px-4 `}>{translatedData('title')}</h2>
         <dl className="flex flex-wrap divide-y divide-slate-200 border-b border-slate-200 text-sm lg:text-base">
           <div className="px-2 pb-4 w-full">
