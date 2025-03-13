@@ -34,16 +34,16 @@ export const ContactForm = () => {
           <button type="submit" className="text-center rounded-full p-2 bg-primary text-base text-white hover:scale-105 transition-transform shadow-stone-400 shadow-lg">{translatedData('send')}</button>
         </div>
         <dl className="flex justify-around p-4">
-          <Link href="tel:123456789">
+          <Link href={`tel:${process.env.NEXT_PUBLIC_PHONE || "123456789"}`}>
             <FaPhone className="w-6 h-6 hover:scale-110 duration-300" style={style} color="#e7687f" />
           </Link>
-          <Link href="https://wa.me/123456789">
+          <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE || "123456789"}`}>
             <IoLogoWhatsapp  className="w-6 h-6 hover:scale-110 duration-300" style={style} color="#25D366" />
           </Link>
-          <Link href="https://facebook.com">
+          <Link href={process.env.NEXT_PUBLIC_FBLINK || "https://www.facebook.com"}>
             <IoLogoFacebook className="w-6 h-6 hover:scale-110 duration-300" style={style} color="#1877F2" />
           </Link>
-          <Link href="mailto:ZdY5I@example.com">
+          <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "email@example.com"}`}>
             <IoMail className="w-6 h-6 hover:scale-110 duration-300" style={style} color="#D14836" />
           </Link>
         </dl>
