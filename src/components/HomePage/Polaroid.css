@@ -28,10 +28,16 @@
   }
   
   @media(max-width: 2048px) {
-    #polaroid-wrapper.animateCard0 #polaroid0,
-    #polaroid-wrapper.animateCard1 #polaroid1,
-    #polaroid-wrapper.animateCard2 #polaroid2 {
-      animation: animateCard 1.5s ease-in-out forwards;
+    [dir="ltr"] #polaroid-wrapper.animateCard0 #polaroid0,
+    [dir="ltr"] #polaroid-wrapper.animateCard1 #polaroid1,
+    [dir="ltr"] #polaroid-wrapper.animateCard2 #polaroid2 {
+      animation: animateCardXR 1.5s ease-in-out forwards;
+    }
+
+    [dir="rtl"] #polaroid-wrapper.animateCard0 #polaroid0,
+    [dir="rtl"] #polaroid-wrapper.animateCard1 #polaroid1,
+    [dir="rtl"] #polaroid-wrapper.animateCard2 #polaroid2 {
+      animation: animateCardX 1.5s ease-in-out forwards;
     }
   }
   
