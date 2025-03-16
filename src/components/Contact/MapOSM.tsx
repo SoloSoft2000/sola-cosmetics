@@ -24,6 +24,7 @@ const MapOSM = (Map: MapProps) => {
       center={posix}
       zoom={zoom}
       scrollWheelZoom={false}
+      dragging={false}
       style={{ height: "100%", width: "100%" }}
     >
       <TileLayer
