@@ -55,3 +55,20 @@
     transform: translateX(calc(-100%));
   }
 }
+
+.marquee-right {
+  animation: scroll-right 60s linear infinite;
+}
+
+.items-wrap:hover .marquee-right {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(calc(-100%));
+  }
+  to {
+    transform: translateX(0);
+  }
+}

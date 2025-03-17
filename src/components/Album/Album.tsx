@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import "./Album.css";
 import { Suspense } from 'react';
+import clsx from 'clsx';
+import { getLocale } from 'next-intl/server';
+import { Locale } from '@/i18n/config';
 
 export const Album = async () => {
   const baseUrl =
@@ -18,6 +21,9 @@ export const Album = async () => {
       <div />
     )
   }
+
+  const lng = (await getLocale()) as Locale;
+  const isHebrew = lng === "he";
 
   const imageList = images.map((image, index) => (
     <div key={index} className="item relative w-40 h-48 md:w-52 md:h-60">
@@ -38,10 +44,10 @@ export const Album = async () => {
   return (
     <>          
       <div className="container mx-auto my-auto h-52 md:h-64 py-2 flex overflow-hidden items-wrap gap-2" dir='ltr'>
-        <div className="flex flex-row items marquee">
+        <div className={clsx("flex flex-row items", isHebrew ? "marquee-right" : "marquee")}>
           {imageList}
         </div>
-        <div aria-hidden="true" className="flex flex-row items marquee">
+        <div aria-hidden="true" className={clsx("flex flex-row items", isHebrew ? "marquee-right" : "marquee")}>
           {imageList}
         </div>
       </div>
