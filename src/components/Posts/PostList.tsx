@@ -1,5 +1,4 @@
 import { PostCard, PostType } from "./PostCard";
-import { rubik } from "@/components/fonts";
 import Link from "next/link";
 import clsx from "clsx";
 import { Locale } from "@/i18n/config";
@@ -30,7 +29,7 @@ export const PostList = async ({ isOnlyLast }: PostListProps) => {
     <div className={clsx("flex flex-col mx-2", !isOnlyLast && "py-12")}>
       {isOnlyLast && (
         <div className="flex justify-between px-8 py-8">
-          <h2 className={`text-2xl text-primary ${rubik.className}`}>
+          <h2 className={`text-2xl text-primary`}>
             {t("lastPosts")}:
           </h2>
         </div>

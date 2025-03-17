@@ -45,7 +45,7 @@ const PolaroidPhotos = () => {
     <div
       id="polaroid-wrapper"
       className={clsx(
-        "relative w-[240px] h-[280px] md:w-[250px] md:h-[320px] xl:w-[350px] xl:h-[450px] mx-auto mb-8",
+        "relative w-[240px] h-[280px] md:w-[250px] md:h-[320px] xl:w-[350px] xl:h-[450px] mx-auto mb-8 ",
         `activePolaroidCard${currIndex}`,
         isAnimating ? `animateCard${currIndex}` : ""
       )}

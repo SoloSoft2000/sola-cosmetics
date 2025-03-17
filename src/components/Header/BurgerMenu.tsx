@@ -3,7 +3,6 @@
 import clsx from 'clsx';
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
-import { rubik } from "@/components/fonts";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from 'next-intl';
@@ -34,7 +33,7 @@ export const BurgerMenu = () => {
             {menuItems.map((item, idx) => {
               const isActive = pathName === `${item}`;
               return (
-                <li key={idx} className={rubik.className}>
+                <li key={idx} >
                   <Link href={`${item}`} onClick={toggleMenu}>
                     <MenuItem menuName={itemNames[idx]} isActive={isActive} />
                   </Link>

@@ -6,9 +6,30 @@ import QuoteCard from '@/components/HomePage/QuoteCard';
 import { MyServices } from '@/components/MyServices/myservices';
 import { PostList } from '@/components/Posts/PostList';
 import clsx from 'clsx';
+import { Metadata } from 'next';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Suspense } from 'react';
+
+export const metadata: Metadata  = {
+  title: 'Solomonik Alena - Beauty and Harmony',
+  description: 'Welcome to the world of beauty and harmony with Solomonik Alena, a cosmetologist from Katzrin, Israel.',
+  keywords: 'Beauty, Harmony, Services, Solomonik Alena, Confidence, Cosmetologist, Israel, Golan Heights',
+  openGraph: {
+    title: 'Solomonik Alena, Cosmetologist',
+    description: 'Welcome to the world of beauty and harmony with Solomonik Alena, a cosmetologist from Katzrin, Israel.',
+    url: process.env.NEXT_PUBLIC_DOMAINNAME,
+    siteName: 'Solomonik Alena, Cosmetologist',
+    type: 'website',
+    // images: [
+    //   {
+    //     url: '/assets/album/og-image.webp',
+    //     width: 600,
+    //     height: 800,
+    //   },
+    // ],
+  }
+}
 
 export default function HomePage() {
   const translatedData = useTranslations('home');

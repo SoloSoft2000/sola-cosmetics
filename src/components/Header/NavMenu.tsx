@@ -1,7 +1,5 @@
 "use client"
 
-import { rubik } from "@/components/fonts";
-// import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from 'next-intl';
@@ -22,7 +20,7 @@ export const NavMenu = () => {
         {menuItems.map((menuItem, idx) => {
           const isActive = pathName === menuItem.href;
           return (
-            <li key={idx} className={rubik.className}>
+            <li key={idx}>
               <Link href={menuItem.href}>
                 <MenuItem
                   menuName={menuItem.name}

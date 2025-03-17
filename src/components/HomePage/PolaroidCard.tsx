@@ -1,7 +1,7 @@
 
 import clsx from "clsx"
 import Image, { StaticImageData } from "next/image"
-import { caveat, rubik } from "@/components/fonts";
+import { caveat } from "@/components/fonts";
 
 export const PolaroidCard = ({item, id, isHebrew = false}: {item: { src: StaticImageData, caption: string }, id: string, isHebrew?: boolean}) => {
   return (
@@ -24,7 +24,7 @@ export const PolaroidCard = ({item, id, isHebrew = false}: {item: { src: StaticI
       <div
         className={clsx(
           "my-1 md:my-3 text-center content-center text-sm xl:text-2xl",
-          isHebrew ? `italic ${rubik.className}` : caveat.className
+          isHebrew ? `italic` : caveat.className
         )}
       >
         <span aria-label={`Caption: ${item.caption}`}>{item.caption}</span>
