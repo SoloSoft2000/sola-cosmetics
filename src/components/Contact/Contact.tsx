@@ -24,21 +24,22 @@ export const Contact = ({ isHome, isPost }: ContactProps) => {
   return (
     <div
       className={clsx(
-        "container mx-auto flex items-center justify-center text-center",
+        "container mx-auto flex items-center justify-center text-center md:mx-0 md:flex-none",
         !isPost && "mt-8",
-        isHome || isPost ? "flex-col" : "flex-row"
+        isHome || isPost ? "flex-col" : "flex-row",
+        !isHome && !isPost && "container mx-auto flex items-center justify-center text-center"
       )}
       aria-labelledby="contact-section"
       role="region"
     >
       {!isPost && (
         <>
-          <div className="mx-auto w-80 md:w-60 lg:w-80 h-60">
+          <div className=" w-80 md:w-60 lg:w-80 h-60">
             <LazyMap posix={[32.99159, 35.684066]} zoom={17} />
           </div>
 
           <div
-            className="w-80 md:w-60 lg:w-80 bg-white rounded-xl shadow-xl ring-1 ring-slate-900/5 p-4 mx-auto mt-1 mb-8 flex justify-around"
+            className="w-80 md:w-60 lg:w-80 bg-white rounded-xl shadow-xl ring-1 ring-slate-900/5 p-4  mt-1 mb-8 flex justify-around"
             aria-label="Map Navigation Links"
             role="navigation"
           >

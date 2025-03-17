@@ -12,7 +12,7 @@ const style = { filter: "drop-shadow(2px 3px 4px gray)"};
 export const ContactForm = () => {
   const translatedData = useTranslations('Contact');
   return (
-    <div className="w-80 md:w-60 lg:w-80 bg-white rounded-xl shadow-xl ring-1 ring-slate-900/5 mx-auto">
+    <div className="w-80 md:w-60 lg:w-80 bg-white rounded-xl shadow-xl ring-1 ring-slate-900/5 ">
       <Form action={sendNotification}>
         <h2 className={`text-2xl text-primary pt-4 pb-2 px-4 `}>{translatedData('title')}</h2>
         <dl className="flex flex-wrap divide-y divide-slate-200 border-slate-200 text-sm lg:text-base">

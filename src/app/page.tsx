@@ -39,7 +39,7 @@ export default function HomePage() {
     <main>
       {/* Welcome section with Polaroid Cards */}
       <section className="border-b-2 border-primary/25">
-        <div className="container max-w-7xl mx-auto ">
+        <div className="container  mx-auto ">
           <div className="flex flex-col lg:flex-row items-center justify-between lg:pt-8 ">
             <div
               className={clsx(
@@ -71,18 +71,18 @@ export default function HomePage() {
       </section>
       {/* Quotes section */}
       <section className="border-b-2 border-primary/25 bg-white">
-        <div className="container mx-auto max-w-7xl">
+        <div className="container mx-auto ">
           <QuoteCard />
         </div>
       </section>
 
       {/* Post section */}
       <section className="flex border-b-2 border-primary/25">
-        <div className="container max-w-7xl mx-auto flex flex-col md:flex-row  justify-between md:gap-5">
-          <div className="w-full md:w-2/3">
+        <div className="container  mx-auto flex flex-col md:flex-row  justify-between md:gap-5">
+          <div className="w-full">
             <PostList isOnlyLast />
           </div>
-          <div id="contact" className="w-full md:w-1/3 flex flex-col items-center my-2 py-10">
+          <div id="contact" className={clsx("w-full md:w-1/3 flex flex-col my-2 py-10")}>
             <Contact isHome />
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function HomePage() {
         <MyServices />
       </section>
       {/* Album section 1*/}
-      <section className="flex border-b-2 border-primary/25  relative">
+      <section className="flex border-b-2 border-primary/25 bg-white relative">
         <Suspense fallback={<AlbumSkeleton />}>
           <Album />
         </Suspense>

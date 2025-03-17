@@ -6,7 +6,7 @@ import { NavMenu } from "./NavMenu"
 export const Header = () => {
   return (
     <header className="px-2 xl:px-4 py-2 xl:py-4 border-b-2 border-primary/25">
-      <div className="container max-w-7xl mx-auto justify-between hidden sm:flex">
+      <div className="container mx-auto justify-between hidden sm:flex">
         <Logo />
         <NavMenu />
         <LangSwitch />

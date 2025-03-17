@@ -42,7 +42,7 @@ export const MyServices = () => {
 
   if (loading || error)
     return (
-      <div className="container flex flex-col justify-between my-4 max-w-7xl mx-auto">
+      <div className="container flex flex-col justify-between my-4  mx-auto">
         <div className="border-8 border-white bg-transparent/5 rounded-3xl mx-auto shadow-2xl">
           <h2 className="mx-auto text-base sm:text-xl lg:text-2xl text-center py-4 sm:py-6 h2 border-b-4 border-white">{translatedData("title")}</h2>
           <h5> {error ? `Error: ${error.message}` : "Loading..."} </h5>
@@ -51,7 +51,7 @@ export const MyServices = () => {
     )
   
   return (
-    <div className="container flex flex-col justify-between my-4 max-w-7xl mx-auto">
+    <div className="container flex flex-col justify-between my-4  mx-auto">
       <div className="border-8 border-white bg-transparent/5 rounded-3xl mx-2 shadow-2xl">
         <h2 className="mx-auto text-base sm:text-xl lg:text-2xl text-center py-4 sm:py-6 h2 border-b-4 border-white">{translatedData("title")}</h2>
         <div className="flex flex-col lg:flex-row">

@@ -37,7 +37,7 @@ export const Album = async () => {
 
   return (
     <>          
-      <div className="mx-auto my-auto h-52 md:h-64 py-2 flex overflow-hidden items-wrap gap-2" dir='ltr'>
+      <div className="container mx-auto my-auto h-52 md:h-64 py-2 flex overflow-hidden items-wrap gap-2" dir='ltr'>
         <div className="flex flex-row items marquee">
           {imageList}
         </div>
