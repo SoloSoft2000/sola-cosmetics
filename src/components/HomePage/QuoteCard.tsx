@@ -40,7 +40,7 @@ const QuoteCard = () => {
   };
 
   return (
-    <div className="relative cursor-pointer" onClick={handleQuoteUpdate}>
+    <div className="relative cursor-pointer" onClick={handleQuoteUpdate} itemScope itemType="https://schema.org/CreativeWork">
       <div className="relative">
         <div
           className={clsx(
@@ -48,6 +48,7 @@ const QuoteCard = () => {
             loading && "opacity-50 animate-pulse",
             !isFirstMount && (isAnimate ? "animateLeftQuote" : "animateRightQuote")
           )}
+          itemProp="text"
         >
           <blockquote className={clsx("text-sm md:text-xl italic text-primary flex", isHebrew ? "text-right" : "text-left")}>
             {error ? `Error: ${error.message}` : quote?.text}
@@ -60,6 +61,7 @@ const QuoteCard = () => {
             loading && "opacity-50 animate-pulse",
             !isFirstMount && (isAnimate ? "animateLeftQuote" : "animateRightQuote")
           )}
+          itemProp="author"
         >
           {quote?.name}
         </div>
@@ -70,5 +72,6 @@ const QuoteCard = () => {
     </div>
   );
 };
+
 
 export default QuoteCard;

@@ -10,7 +10,6 @@ type PostListProps = {
   isOnlyLast?: boolean;
 }
 export const PostList = async ({ isOnlyLast }: PostListProps) => {
-  
   const lng = (await getLocale()) as Locale;
   const baseUrl =
     process.env.NEXT_PUBLIC_BASE_URL ||
@@ -31,7 +30,9 @@ export const PostList = async ({ isOnlyLast }: PostListProps) => {
     <div className={clsx("flex flex-col mx-2", !isOnlyLast && "py-12")}>
       {isOnlyLast && (
         <div className="flex justify-between px-8 py-8">
-          <h2 className={`text-2xl text-primary ${rubik.className}`}>{t("lastPosts")}:</h2>
+          <h2 className={`text-2xl text-primary ${rubik.className}`}>
+            {t("lastPosts")}:
+          </h2>
         </div>
       )}
 
@@ -45,9 +46,11 @@ export const PostList = async ({ isOnlyLast }: PostListProps) => {
           <Link
             href="/posts"
             className="text-center rounded-full p-4 bg-primary text-white shadow-stone-400 shadow-lg"
+            aria-label={t("gotoPosts")}
           >
             {t("gotoPosts")}
-          </Link></div>
+          </Link>
+        </div>
       )}
     </div>
   );

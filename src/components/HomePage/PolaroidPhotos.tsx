@@ -61,6 +61,7 @@ const PolaroidPhotos = () => {
           item={item}
           id={`polaroid${idx}`}
           isHebrew = {isHebrew}
+          aria-label={`Polaroid photo ${idx + 1}: ${item.caption}`}
         />
       ))}
     </div>

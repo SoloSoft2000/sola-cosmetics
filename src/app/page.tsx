@@ -18,7 +18,7 @@ export default function HomePage() {
     <main>
       {/* Welcome section with Polaroid Cards */}
       <section className="border-b-2 border-primary/25">
-        <div className="container mx-auto ">
+        <div className="container max-w-7xl mx-auto ">
           <div className="flex flex-col lg:flex-row items-center justify-between lg:pt-8 ">
             <div
               className={clsx(
@@ -30,7 +30,7 @@ export default function HomePage() {
                 {translatedData("subtitle")} <br />
                 <span className="text-primary">{translatedData("title")}</span>
               </h1>
-              <div className="flex flex-col">
+              <h2 className="flex flex-col">
                 <p className={clsx("mt-10 mb-4 text-justify indent-6", isHebrew ? 'lg:pl-20' : 'lg:pr-20')}>
                   {translatedData("desc")}
                 </p>
@@ -39,7 +39,7 @@ export default function HomePage() {
                     {translatedData("contact")}
                   </Link>
                 </div>
-              </div>
+              </h2>
             </div>
 
             <div className="lg:my-15 lg:px-5 px-2 my-8">
@@ -50,14 +50,14 @@ export default function HomePage() {
       </section>
       {/* Quotes section */}
       <section className="border-b-2 border-primary/25 bg-white">
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-7xl">
           <QuoteCard />
         </div>
       </section>
 
       {/* Post section */}
       <section className="flex border-b-2 border-primary/25">
-        <div className="container mx-auto flex flex-col md:flex-row  justify-between md:gap-5">
+        <div className="container max-w-7xl mx-auto flex flex-col md:flex-row  justify-between md:gap-5">
           <div className="w-full md:w-2/3">
             <PostList isOnlyLast />
           </div>

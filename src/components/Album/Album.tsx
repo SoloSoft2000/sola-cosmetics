@@ -20,11 +20,19 @@ export const Album = async () => {
   }
 
   const imageList = images.map((image, index) => (
-    <div key={index} className="item relative w-40 h-48 md:w-52 md:h-60"> {
-      <Suspense fallback={<div className="w-4/5 h-full bg-gray-300 animate-pulse"></div>}>      
-        <Image src={image} alt="" style={{objectFit: "scale-down"}} fill sizes="100%" loading="lazy" />
+    <div key={index} className="item relative w-40 h-48 md:w-52 md:h-60">
+      <Suspense fallback={<div className="w-4/5 h-full bg-gray-300 animate-pulse"></div>}>
+        <Image
+          src={image}
+          alt={image.replace(baseUrl + "/public/assets/album/", "").replace(".webp", "")}
+          style={{objectFit: "scale-down"}}
+          fill
+          sizes="100%"
+          loading="lazy"
+          className="image"
+        />
       </Suspense>
-   } </div>
+    </div>
   ));
 
   return (

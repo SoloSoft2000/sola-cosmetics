@@ -18,31 +18,33 @@ export const BurgerMenu = () => {
 
   const t = useTranslations('Navigation');
   const itemNames = t('MenuNames').split("|");
-  const menuItems = ["/", "/posts", "#contact"];
+  const menuItems = ["/", "/posts", "/#contact"];
   const pathName = usePathname();
   const isHebrew = useLocale() === 'he';
-  
+
   return (
     <>
-    { isOpen && <div className='absolute top-0 left-0 w-screen h-screen bg-slate-800 opacity-50' onClick={toggleMenu}></div>}
-    <div className='px-4 flex flex-col relative'>
-      <Menu  className={clsx('cursor-pointer transition duration-500', isOpen ? 'rotate-90' : '')} onClick={toggleMenu} />
-      { isOpen && <div className={clsx('absolute top-10 bg-white p-4 text-center rounded-md shadow-lg shadow-slate-600',
-        isHebrew ? "left-4" : "right-4"
-      )}>
-        {menuItems.map((item, idx) => {
-          const isActive = pathName === `${item}`;
-          return (
-            <div key={idx} className={rubik.className}>
-              <Link href={`${item}`} onClick={toggleMenu}>
-                <MenuItem menuName={itemNames[idx]} isActive={isActive} />
-              </Link>
-            </div>
-          );
-        })}
-        </div>
-      }
-    </div>
+      { isOpen && <div className='absolute top-0 left-0 w-screen h-screen bg-slate-800 opacity-50' onClick={toggleMenu} role='presentation'></div>}
+      <div className='px-4 flex flex-col relative'>
+        <Menu  className={clsx('cursor-pointer transition duration-500', isOpen ? 'rotate-90' : '')} onClick={toggleMenu} role='button' aria-label='Toggle menu' />
+        { isOpen && <nav className={clsx('absolute top-10 bg-white p-4 text-center rounded-md shadow-lg shadow-slate-600',
+          isHebrew ? "left-4" : "right-4"
+        )}>
+          <ul className='flex flex-col'>
+            {menuItems.map((item, idx) => {
+              const isActive = pathName === `${item}`;
+              return (
+                <li key={idx} className={rubik.className}>
+                  <Link href={`${item}`} onClick={toggleMenu}>
+                    <MenuItem menuName={itemNames[idx]} isActive={isActive} />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+        }
+      </div>
     </>
   );
 };

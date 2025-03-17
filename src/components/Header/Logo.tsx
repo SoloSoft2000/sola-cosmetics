@@ -8,7 +8,7 @@ export const Logo = () => {
       <div className="w-12 md:w-16 lg:w-24">
         <Image
           src={logoImg}
-          alt="Logo"
+          alt="SolA-Cosmetic logo"
           style={{
             objectFit: "contain",
             height: 'auto',
