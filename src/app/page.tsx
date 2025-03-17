@@ -8,27 +8,26 @@ import { PostList } from '@/components/Posts/PostList';
 import clsx from 'clsx';
 import { Metadata } from 'next';
 import { useLocale, useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
-export const metadata: Metadata  = {
-  title: 'Solomonik Alena - Beauty and Harmony',
-  description: 'Welcome to the world of beauty and harmony with Solomonik Alena, a cosmetologist from Katzrin, Israel.',
-  keywords: 'Beauty, Harmony, Services, Solomonik Alena, Confidence, Cosmetologist, Israel, Golan Heights',
-  openGraph: {
-    title: 'Solomonik Alena, Cosmetologist',
-    description: 'Welcome to the world of beauty and harmony with Solomonik Alena, a cosmetologist from Katzrin, Israel.',
-    url: process.env.NEXT_PUBLIC_DOMAINNAME,
-    siteName: 'Solomonik Alena, Cosmetologist',
-    type: 'website',
-    // images: [
-    //   {
-    //     url: '/assets/album/og-image.webp',
-    //     width: 600,
-    //     height: 800,
-    //   },
-    // ],
+export async function generateMetadata() { 
+  // const lng = useLocale();
+  const t = await getTranslations('metadata');
+  const metadata: Metadata  = {
+    title: t('title'),
+    description: t('description'),
+    keywords: t('keywords'),
+    openGraph: {
+      title: t('og-title'),
+      description: t('description'),
+      url: process.env.NEXT_PUBLIC_DOMAINNAME,
+      siteName: t('og-title'),
+      type: 'website'
+    }
   }
+  return metadata;
 }
 
 export default function HomePage() {
@@ -38,8 +37,8 @@ export default function HomePage() {
   return (
     <main>
       {/* Welcome section with Polaroid Cards */}
-      <section className="border-b-2 border-primary/25">
-        <div className="container  mx-auto ">
+      <section className="border-b-2 border-primary/25 overflow-hidden">
+        <div className="container  mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between lg:pt-8 ">
             <div
               className={clsx(
