@@ -9,7 +9,6 @@ import clsx from "clsx";
 import { useLocale } from "next-intl";
 import { setUserLocale } from "@/i18n/locale";
 import { Locale } from "@/i18n/config";
-import Link from "next/link";
 
 const langFlags = [{
   lng: "en",
@@ -34,9 +33,9 @@ export const LangSwitch = () => {
         langFlags.map(({lng, flag}) => {
           const isActive = lng === currentLng;
           return (
-            <Link hrefLang={lng} href={''} key={lng}  className={clsx(isActive ? "opacity-50 cursor-default" : "hover:scale-125","relative mr-2 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8")} onClick={() => setUserLocale(lng as Locale)}>
+            <button key={lng}  className={clsx(isActive ? "opacity-50 cursor-default" : "hover:scale-125","relative mr-2 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8")} onClick={() => setUserLocale(lng as Locale)}>
               <Image src={flag} alt={lng} fill/>
-            </Link>
+            </button>
         )})
       }
     </nav>
