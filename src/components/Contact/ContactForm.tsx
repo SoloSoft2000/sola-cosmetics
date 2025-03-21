@@ -2,8 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { IoLogoFacebook, IoLogoWhatsapp, IoMail } from "react-icons/io5";
 import { FaPhone } from "react-icons/fa6";
+import { EmailIcon, WhatsappIcon, FacebookIcon,  } from "react-share";
 import Form from 'next/form';
 import  { sendNotification }  from "./actions";
 
@@ -39,13 +39,13 @@ export const ContactForm = () => {
             <FaPhone className="w-6 h-6 hover:scale-110 duration-300" style={style} color="#e7687f" />
           </Link>
           <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE || "123456789"}`}>
-            <IoLogoWhatsapp  className="w-6 h-6 hover:scale-110 duration-300" style={style} color="#25D366" />
+            <WhatsappIcon className="w-6 h-6 hover:scale-110 duration-300" round style={style}/>
           </Link>
           <Link href={process.env.NEXT_PUBLIC_FBLINK || "https://www.facebook.com"}>
-            <IoLogoFacebook className="w-6 h-6 hover:scale-110 duration-300" style={style} color="#1877F2" />
+            <FacebookIcon className="w-6 h-6 hover:scale-110 duration-300" round style={style}/>
           </Link>
           <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "email@example.com"}`}>
-            <IoMail className="w-6 h-6 hover:scale-110 duration-300" style={style} color="#D14836" />
+            <EmailIcon className="w-6 h-6 hover:scale-110 duration-300" round style={style} />
           </Link>
         </dl>
       </Form>
