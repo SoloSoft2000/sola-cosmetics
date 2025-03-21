@@ -35,16 +35,9 @@
   transition: all 0.1s ease-in-out;
 }
 
-.item:hover {
-  transform: scale(1.05);
-}
 
 .marquee {
-  animation: scroll 60s linear infinite;
-}
-
-.items-wrap:hover .marquee {
-  animation-play-state: paused;
+  animation: scroll 120s linear infinite;
 }
 
 @keyframes scroll {
@@ -57,11 +50,7 @@
 }
 
 .marquee-right {
-  animation: scroll-right 60s linear infinite;
-}
-
-.items-wrap:hover .marquee-right {
-  animation-play-state: paused;
+  animation: scroll-right 120s linear infinite;
 }
 
 @keyframes scroll-right {
@@ -71,4 +60,20 @@
   to {
     transform: translateX(0);
   }
+}
+
+@media (pointer: fine) {
+  .item:hover {
+    transform: scale(1.01);
+  }
+  
+  
+  .items-wrap:hover .marquee {
+    animation-play-state: paused;
+  }
+  
+  
+  .items-wrap:hover .marquee-right {
+    animation-play-state: paused;
+  } 
 }

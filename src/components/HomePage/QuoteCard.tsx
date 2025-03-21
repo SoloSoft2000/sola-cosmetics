@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { useLocale } from "next-intl";
-import { RefreshCcw } from "lucide-react";
+import { SquareArrowRight } from "lucide-react";
 import { Locale } from "../../i18n/config";
 import { useAsync, useToggle } from "react-use";
 import { useState } from "react";
@@ -65,8 +65,8 @@ const QuoteCard = () => {
         >
           {quote?.name}
         </div>
-        <div className={clsx("absolute bottom-2 md:top-4 text-primary animate-spin-slow w-6 h-6", isHebrew ? "left-4" : "right-4")}>
-          <RefreshCcw />
+        <div className={clsx("absolute bottom-2 md:top-4 text-primary animate-pulse w-6 h-6", isHebrew ? "left-4" : "right-4")}>
+          <SquareArrowRight />
         </div>
       </div>
     </div>
