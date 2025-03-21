@@ -25,7 +25,7 @@ export default function ServiceItem({ item }: { item: ServiceItemType }) {
 
         <div className="text-sm md:text-base xl:text-lg text-justify indent-2 px-1 md:px-6 w-full md:w-4/5 text-black">
           <Image src={images[item.image]} alt="" width={64} height={96} className="rounded-xl float-left mr-2 mt-2 md:hidden py-auto h-24 w-auto" />
-          <h3 className="hidden md:block lg:text-2xl xl:text-3xl text-primary text-center font-semibold pt-4">
+          <h3 className="hidden md:block lg:text-xl xl:text-2xl text-primary text-center font-semibold py-4">
             {item.title}
           </h3>
           <p className="text-sm md:text-base xl:text-lg indent-2">{item.description}</p>

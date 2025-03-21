@@ -6,6 +6,7 @@ import ServiceItem from "./ServiceItem";
 import useAsync, { AsyncState } from "react-use/lib/useAsync";
 import clsx from "clsx";
 import { AnimatePresence, motion } from "motion/react";
+import { Archive } from "lucide-react";
 
 export type ServiceItemType = {
   image: string;
@@ -29,8 +30,8 @@ export const MyServices = () => {
     const isFirst = idx === 0;
     const isLast = servicesList.length - 1;
     return clsx(
-      'p-2 text-center lg:text-end md:py-12 lg:py-4 text-xl md:text-base lg:text-xl xl:text-lg transition duration-500',
-      isActive ? 'bg-transparent text-primary font-semibold z-10 cursor-default' : 'bg-white cursor-pointer hover:bg-primary hover:text-white',
+      'p-2 text-center lg:text-end md:py-12 lg:py-4 text-xl md:text-base lg:text-xl xl:text-lg transition duration-200',
+      isActive ? 'bg-transparent text-primary font-semibold z-10 cursor-default' : 'bg-white cursor-pointer ',
       isActive && isFirst && 'md:rounded-ss-2xl',
       isActive && isLast && 'md:rounded-es-2xl border-b-0',
       isActive && !isFirst && !isLast && 'md:rounded-s-2xl',
@@ -60,9 +61,16 @@ export const MyServices = () => {
               <li
                 key={serviceItem.title}
                 onClick={() => setActiveService(idx)}
+                onMouseOver={() => setActiveService(idx)}
                 className={getTabStyles(idx)}
               >
-                <div className="rotate-0 text-sm lg:text-base md:-rotate-[65deg] md:leading-3 lg:rotate-0">{serviceItem.title}</div>
+                <h4 className={
+                  clsx("flex md:block rotate-0 text-sm lg:text-base md:-rotate-[65deg] md:leading-3 lg:rotate-0",
+                    idx === activeService ? "text-primary font-semibold justify-center" : "justify-between"
+                )}>
+                  {serviceItem.title}
+                  { idx !== activeService && <Archive className="block md:hidden animate-pulse text-primary" size={16} />}
+                </h4>
                 <AnimatePresence mode="wait">
                 {idx === activeService && <motion.div
                   key={serviceItem.title}

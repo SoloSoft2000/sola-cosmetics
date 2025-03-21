@@ -9,7 +9,7 @@ export default function Background() {
       placeholder="blur"
       quality={100}
       fill
-      className='fixed w-screen overflow-hidden -z-50 opacity-35'
+      className='fixed w-screen overflow-hidden -z-50 opacity-30'
       priority
     />
   )
